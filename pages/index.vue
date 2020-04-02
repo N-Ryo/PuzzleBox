@@ -8,7 +8,6 @@
         sm8
         md6
       >
-        <vuetify-logo />
         <welcome />
         <v-row justify="space-around">
           <v-card v-for="item in cardContents" :key="item.name" min-width="35vw">
@@ -26,14 +25,12 @@
 </template>
 
 <script>
-import VuetifyLogo from '~/components/for-this-repo/vuetify-logo'
 import Welcome from '~/components/for-this-repo/welcome'
 import Particle from '~/components/for-this-repo/particle'
 
 
 export default {
   components: {
-    VuetifyLogo,
     Welcome,
     Particle
   },
