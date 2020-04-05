@@ -5,7 +5,8 @@
 <script>
 export default {
   mounted() {
-    particlesJS.load('particle', `${process.env.DEPLOY_ENV === 'GH_PAGES' ? '/PuzzleBox/' : '/'}particlesjs-config.json`, function() {
+    particlesJS.load('particle', '/PuzzleBox/particlesjs-config.json', function() {
+    // particlesJS.load('particle', '/particlesjs-config.json', function() {
       console.log('callback - particles.js config loaded');
     });
   }
