@@ -8,7 +8,7 @@
 export default {
   data() {
     return {
-      text: "Welcome To Vuetify+"
+      text: "Welcome To Puzzle-Box"
     }
   },
   computed: {
