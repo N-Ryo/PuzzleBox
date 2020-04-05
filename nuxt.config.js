@@ -1,5 +1,11 @@
 const colors = require('vuetify/es5/util/colors').default
 
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  router: {
+    base: '/PuzzleBox/'
+  }
+} : {}
+
 module.exports = {
   mode: 'spa',
   /*
@@ -69,6 +75,9 @@ module.exports = {
       }
     }
   },
+
+
+  ...routerBase,
   /*
   ** Build configuration
   */
