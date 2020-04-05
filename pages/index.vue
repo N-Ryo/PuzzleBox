@@ -31,9 +31,6 @@ export default {
     posts() {
       return this.$store.state.userPostList
     }
-  },
-  mounted() {
-    this.$store.dispatch('getUsers')
-  },
+  }
 }
 </script>

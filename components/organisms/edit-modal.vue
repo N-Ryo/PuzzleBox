@@ -1,18 +1,18 @@
 <template>
-  <v-dialog v-model="dialog" persistent max-width="600px">
+  <v-dialog v-model="dialog" max-width="600px">
     <template v-slot:activator="{ on }">
       <v-btn icon v-on="on">
-        <v-icon>mdi-pencil</v-icon>
+        <v-icon color="cyan">mdi-pencil</v-icon>
       </v-btn>
     </template>
     <v-card>
       <v-card-title>
-        <span class="headline">投稿</span>
+        <span class="headline">編集</span>
       </v-card-title>
       <v-card-text>
         <v-container>
-          <v-row>
-            <v-col cols="12" sm="6" md="4">
+          <v-row justify-center>
+            <v-col>
               <v-textarea
                 outlined
                 label="Default style"
@@ -24,8 +24,8 @@
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn color="blue darken-1" text @click="dialog = false">cancel</v-btn>
-        <v-btn color="blue darken-1" text @click="updatePost">Update</v-btn>
+        <v-btn color="cyan" text @click="dialog = false">cancel</v-btn>
+        <v-btn color="cyan" text :disabled="body.length === 0 || post.body === body" @click="updatePost">Update</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
@@ -57,7 +57,7 @@ export default {
   },
   methods: {
     updatePost() {
-      if (this.body.length > 0) {
+      if (this.body.length > 0 && this.post.body !== this.body) {
         const fd = new FormData
         fd.append('post[body]', this.body)
         fd.append('post[user_id]', parseInt(this.$route.params.id))
